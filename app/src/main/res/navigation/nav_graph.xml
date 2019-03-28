@@ -1,5 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/firstBottomNavFragment">
+    <fragment
+        android:id="@+id/firstBottomNavFragment"
+        android:name="ru.sberbank.homework25.bottomNavFragments.FirstBottomNavFragment"
+        android:label="fragment_first_bottom_nav"
+        tools:layout="@layout/fragment_first_bottom_nav">
+        <action
+            android:id="@+id/action_firstBottomNavFragment_to_secondBottomNavFragment"
+            app:destination="@id/secondBottomNavFragment" />
+        <action
+            android:id="@+id/action_firstBottomNavFragment_to_thirdBottomNavFragment"
+            app:destination="@id/thirdBottomNavFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondBottomNavFragment"
+        android:name="ru.sberbank.homework25.bottomNavFragments.SecondBottomNavFragment"
+        android:label="fragment_second_bottom_nav"
+        tools:layout="@layout/fragment_second_bottom_nav">
+        <action
+            android:id="@+id/action_secondBottomNavFragment_to_thirdBottomNavFragment"
+            app:destination="@id/thirdBottomNavFragment" />
+        <action
+            android:id="@+id/action_secondBottomNavFragment_to_firstBottomNavFragment"
+            app:destination="@id/firstBottomNavFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdBottomNavFragment"
+        android:name="ru.sberbank.homework25.bottomNavFragments.ThirdBottomNavFragment"
+        android:label="fragment_third_bottom_nav"
+        tools:layout="@layout/fragment_third_bottom_nav">
+        <action
+            android:id="@+id/action_thirdBottomNavFragment_to_firstBottomNavFragment"
+            app:destination="@id/firstBottomNavFragment" />
+        <action
+            android:id="@+id/action_thirdBottomNavFragment_to_secondBottomNavFragment"
+            app:destination="@id/secondBottomNavFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_firstBottomNavFragment"
+        app:destination="@id/firstBottomNavFragment" />
+    <action
+        android:id="@+id/action_global_secondBottomNavFragment"
+        app:destination="@id/secondBottomNavFragment" />
+    <action
+        android:id="@+id/action_global_thirdBottomNavFragment"
+        app:destination="@id/thirdBottomNavFragment" />
+    <activity
+        android:id="@+id/drawerActivity"
+        android:name="ru.sberbank.homework25.DrawerActivity"
+        android:label="activity_drawer"
+        tools:layout="@layout/activity_drawer" />
+    <fragment
+        android:id="@+id/globalDialogFragment"
+        android:name="ru.sberbank.homework25.GlobalDialogFragment"
+        android:label="fragment_global_dialog"
+        tools:layout="@layout/fragment_global_dialog" />
+    <action
+        android:id="@+id/action_global_globalDialogFragment"
+        app:destination="@id/globalDialogFragment" />
 </navigation>
